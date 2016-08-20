@@ -7,6 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('product', { resetNamespace: true, path: '/products' });
+  this.route('product.new', { path: '/products/new'});
+  this.route('product.edit', { path: '/products/:product_id/edit'});
+  this.route('product.show', { path: '/products/:product_id'});
 });
 
 export default Router;

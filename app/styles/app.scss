@@ -1,0 +1,35 @@
+$enable-flex: true;
+@import "bootstrap";
+
+.product-card {
+  .card-image {
+    text-align: center;
+    background-color: $gray-dark;
+    overflow: hidden;
+  }
+
+  max-width: 300px !important;
+
+  img {
+    height: 200px !important;
+    width: auto;
+  }
+}
+
+.hm-slideshow {
+  height: 100%;
+  .carousel-inner {
+    background-color: $gray-dark;
+    img {
+      margin: auto;
+    }
+  }
+}
+
+#product-nav {
+  margin-top: 0.5em;
+}
+
+#product-details {
+  margin-top: 0.5em;
+}

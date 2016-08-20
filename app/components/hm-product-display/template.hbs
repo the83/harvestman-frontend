@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        {{#link-to 'product'}}
+          Products
+        {{/link-to}}
+      </li>
+      <li class="breadcrumb-item active">
+        {{product.name}}
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 product-name">
+    <h3>
+      {{product.name}}
+    </h3>
+  </div>
+  <div class="col-sm-6 model-number">
+    <h3 class="pull-sm-right">
+      model {{product.modelNumber}}
+    </h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 product-images">
+    {{hm-slideshow slideshowId=product.id images=product.images}}
+  </div>
+
+  <div class="col-sm-6">
+    <div id="product-nav">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#description" role="tab">
+            Description
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#specs" role="tab">
+            Specs
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#manual" role="tab">
+            Manual
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#buy" role="tab">
+            Where To Buy
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="product-details" class="tab-content">
+      <div class="tab-pane fade in active" id="description" role="tabpanel">
+        <p>
+          {{{product.description}}}
+        </p>
+      </div>
+      <div class="tab-pane fade" id="specs" role="tabpanel">
+        <p>
+          {{{product.features}}}
+        </p>
+      </div>
+      <div class="tab-pane fade" id="manual" role="tabpanel">
+        <p>
+          {{{product.manual}}}
+        </p>
+      </div>
+      <div class="tab-pane fade" id="buy" role="tabpanel">
+        <p>
+          $$$
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
