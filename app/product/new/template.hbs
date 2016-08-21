@@ -1,6 +1,28 @@
-<div class="row">
-  <div class="col s12">
-    <h5>Create New Product</h5>
-    {{hm-product-form product=model.product action="save"}}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          {{#link-to 'product'}}
+            Products
+          {{/link-to}}
+        </li>
+        <li class="breadcrumb-item active">
+          New Product
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Create New Product</h3>
+    </div>
+    <div class="col-sm-12">
+      {{hm-product-form product=model.product action="save"}}
+    </div>
   </div>
 </div>

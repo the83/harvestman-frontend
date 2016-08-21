@@ -1,5 +1,7 @@
 <div class="card-deck">
   {{#each products as |product|}}
-    {{hm-product-tile product=product}}
+    <div class="col-md-3">
+      {{hm-product-tile product=product}}
+    </div>
   {{/each}}
 </div>

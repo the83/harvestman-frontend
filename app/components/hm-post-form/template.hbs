@@ -1,0 +1,28 @@
+<form id="post-form">
+  {{hm-images images=post.images}}
+
+  <div class="form-group">
+    {{hm-file-uploader store=store model=post objectId=post.id objectType='posts'}}
+  </div>
+
+  <div class="form-group">
+    <label for="post-title">Title</label>
+    {{input type="text" id="post-title" class="form-control" value=post.title}}
+  </div>
+
+  <div class="form-group">
+    <label for="post-permalink">permalink</label>
+    {{input type="text" id="post-permalink" class="form-control" value=post.permalink}}
+  </div>
+
+  <div class="form-group">
+    <label for="post-content">Content</label>
+    {{textarea id="post-content" class="form-control" value=post-content}}
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit" id="save-button" {{action 'save'}}>
+      Submit
+    </button>
+  </div>
+</form>

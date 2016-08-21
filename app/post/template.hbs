@@ -6,19 +6,20 @@
           <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item active">
-          Products
+          News
         </li>
-
-        {{#link-to 'product.new' class='btn btn-success pull-sm-right'}}
-          New Product
+        {{#link-to 'post.new' class='btn btn-success pull-sm-right'}}
+          New Post
         {{/link-to}}
       </ol>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12">
-      {{hm-product-tiles products=model.products}}
+  {{#each model.posts as |post|}}
+    <div class="row">
+      <div class="col-sm-12">
+        {{hm-post-display post=post}}
+      </div>
     </div>
-  </div>
+  {{/each}}
 </div>
