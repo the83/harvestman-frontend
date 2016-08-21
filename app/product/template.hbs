@@ -9,9 +9,11 @@
           Products
         </li>
 
-        {{#link-to 'product.new' class='btn btn-success pull-sm-right'}}
-          New Product
-        {{/link-to}}
+        {{#if model.isAuthenticated}}
+          {{#link-to 'product.new' class='btn btn-success pull-sm-right'}}
+            New Product
+          {{/link-to}}
+        {{/if}}
       </ol>
     </div>
   </div>

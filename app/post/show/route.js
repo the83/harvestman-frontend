@@ -1,4 +1,3 @@
 import BaseRoute from 'harvestman-frontend/post/base/route';
 
-export default BaseRoute.extend({
-});
+export default BaseRoute.extend({});

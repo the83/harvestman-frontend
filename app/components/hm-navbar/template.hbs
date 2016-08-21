@@ -15,9 +15,20 @@
               News
             {{/link-to}}
           </li>
+          {{#if showLogoutButton}}
+            <li class="nav-item pull-xs-right">
+              <button
+                type="button"
+                class="btn btn-warning"
+                {{action 'invalidateSession'}}
+                >
+                Log Out
+              </button>
+            </li>
+          {{/if}}
         </ul>
 
-        <div class="pull-xs-right">
+        <div>
           <button
             type="button"
             class="navbar-toggler collapsed"
@@ -48,6 +59,17 @@
                 News
               {{/link-to}}
             </li>
+            {{#if showLogoutButton}}
+              <li>
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  {{action 'invalidateSession'}}
+                  >
+                  Log Out
+                </button>
+              </li>
+            {{/if}}
           </ul>
         </div><!--/.nav-collapse -->
       </div>

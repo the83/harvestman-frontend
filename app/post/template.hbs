@@ -8,9 +8,11 @@
         <li class="breadcrumb-item active">
           News
         </li>
-        {{#link-to 'post.new' class='btn btn-success pull-sm-right'}}
-          New Post
-        {{/link-to}}
+        {{#if model.isAuthenticated}}
+          {{#link-to 'post.new' class='btn btn-success pull-sm-right'}}
+            New Post
+          {{/link-to}}
+        {{/if}}
       </ol>
     </div>
   </div>

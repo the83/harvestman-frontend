@@ -13,13 +13,18 @@
         <li class="breadcrumb-item active">
           {{model.post.title}}
         </li>
+        {{#if model.isAuthenticated}}
+          {{#link-to 'post.edit' model.post.id class='btn btn-primary pull-sm-right'}}
+            Edit
+          {{/link-to}}
+        {{/if}}
       </ol>
     </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12">
-      {{hm-post-display post=model.post}}
+      {{hm-post-display post=model.post isAuthenticated=model.isAuthenticated}}
     </div>
   </div>
 </div>

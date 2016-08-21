@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('post.new', { path: '/news/new' });
   this.route('post.edit', { path: '/news/:post_id/edit' });
   this.route('post.show', { path: '/news/:post_id' });
+  this.route('login');
 });
 
 export default Router;

@@ -1,3 +1,27 @@
 <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          {{#link-to 'product'}}
+            Products
+          {{/link-to}}
+        </li>
+        <li class="breadcrumb-item active">
+          {{model.product.name}}
+        </li>
+
+        {{#if model.isAuthenticated}}
+          {{#link-to 'product.edit' model.product.id class='btn btn-primary pull-sm-right'}}
+            Edit
+          {{/link-to}}
+        {{/if}}
+      </ol>
+    </div>
+  </div>
+
   {{hm-product-display product=model.product isAuthenticated=model.isAuthenticated}}
 </div>

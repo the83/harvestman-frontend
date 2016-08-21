@@ -13,6 +13,20 @@ module.exports = function(environment) {
       }
     },
 
+    contentSecurityPolicy: {
+      'img-src': "'self' data:",
+      'connect-src': "*"
+    },
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:devise'
+    },
+    'simple-auth-devise': {
+      tokenAttributeName: 'token',
+      identificationAttributeName: 'email'
+    },
+    backendHost: 'http://localhost:3000',
+
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -39,7 +53,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.backendHost = 'https://harvestman-staging.herokuapp.com'
   }
 
   return ENV;
