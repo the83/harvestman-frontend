@@ -61,6 +61,28 @@ h1, h2, h3 {
   }
 }
 
+.news-feed {
+  margin-top: 2em;
+}
+
+.post-card {
+  h3 {
+    color: $color-primary-0;
+    font-weight: bold;
+  }
+
+  .card-image {
+    height: 300px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
 .hm-slideshow {
   height: 100%;
   .carousel-inner {

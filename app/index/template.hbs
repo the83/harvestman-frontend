@@ -29,10 +29,12 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container news-feed">
   <div class="row">
     <div class="col-xs-12">
-      Other content goes here
+      {{#each model.posts as |post|}}
+        {{hm-post-display post=post}}
+      {{/each}}
     </div>
   </div>
 </div>

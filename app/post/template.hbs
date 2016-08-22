@@ -9,7 +9,7 @@
           News
         </li>
         {{#if model.isAuthenticated}}
-          {{#link-to 'post.new' class='btn btn-success pull-sm-right'}}
+          {{#link-to 'post.new' class='btn btn-success pull-xs-right'}}
             New Post
           {{/link-to}}
         {{/if}}
@@ -17,11 +17,12 @@
     </div>
   </div>
 
-  {{#each model.posts as |post|}}
-    <div class="row">
-      <div class="col-sm-12">
+
+  <div class="row">
+    <div class="col-xs-12">
+      {{#each model.posts as |post|}}
         {{hm-post-display post=post}}
-      </div>
+      {{/each}}
     </div>
-  {{/each}}
+  </div>
 </div>
