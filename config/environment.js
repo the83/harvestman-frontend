@@ -24,8 +24,8 @@ module.exports = function(environment) {
       tokenAttributeName: 'token',
       identificationAttributeName: 'email'
     },
-    backendHost: 'http://localhost:3000',
 
+    backendHost: 'http://localhost:3000',
 
     APP: {
       // Here you can pass flags/options to your application instance

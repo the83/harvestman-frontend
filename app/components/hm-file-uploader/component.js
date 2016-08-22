@@ -20,13 +20,6 @@ export default EmberUploader.FileField.extend({
     const uploadUrl = `${host}/api/v1/images?parent_id=${this.get('objectId')}&parent_type=${this.get('objectType')}` ;
     const uploader = CustomUploader.create({
       url: uploadUrl,
-      headers: {
-        "X-XSRF-TOKEN": decodeURIComponent(
-          Ember.get(
-            document.cookie.match(/XSRF\-TOKEN\=([^;]*)/), "1"
-          )
-        )
-      },
       paramName: 'image'
     });
 
