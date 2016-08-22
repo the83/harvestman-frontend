@@ -2,7 +2,7 @@
   {{hm-images images=post.images}}
 
   <div class="form-group">
-    {{hm-file-uploader store=store model=post objectId=post.id objectType='posts'}}
+    {{hm-file-uploader store=store model=post objectId=post.id objectType='Post'}}
   </div>
 
   <div class="form-group">
@@ -17,7 +17,7 @@
 
   <div class="form-group">
     <label for="post-content">Content</label>
-    {{textarea id="post-content" class="form-control" value=post-content}}
+    {{textarea id="post-content" class="form-control" value=post.content}}
   </div>
 
   <div class="form-group">
