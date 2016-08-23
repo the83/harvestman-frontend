@@ -1,9 +1,13 @@
 <div class="card post-card">
-  <div class="card-image">
-    <img src={{post.heroImage}} alt={{post.title}}>
-  </div>
+  {{#link-to "post.show" post.id}}
+    <div class="card-image">
+      <img src={{post.heroImage}} alt={{post.title}}>
+      <div class="post-title">
+        <h3>{{post.title}}</h3>
+      </div>
+    </div>
+  {{/link-to}}
   <div class="card-block">
-    <h3>{{post.title}}</h3>
     <p>{{post.content}}</p>
   </div>
 </div>
