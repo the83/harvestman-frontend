@@ -138,3 +138,9 @@ h1, h2, h3 {
 .not-found {
   text-align: center;
 }
+
+#about {
+  h3 {
+    border-bottom: 1px solid $gray-dark;
+  }
+}

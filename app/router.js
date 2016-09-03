@@ -20,6 +20,7 @@ Router.map(function() {
   this.route('login');
   this.route('404');
   this.route('bad_url', { path: '/*badurl' });
+  this.route('about');
 });
 
 export default Router;
