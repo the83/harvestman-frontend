@@ -18,6 +18,8 @@ Router.map(function() {
   this.route('post.edit', { path: '/news/:post_id/edit' });
   this.route('post.show', { path: '/news/:post_id' });
   this.route('login');
+  this.route('404');
+  this.route('bad_url', { path: '/*badurl' });
 });
 
 export default Router;

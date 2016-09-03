@@ -16,6 +16,9 @@ export default ActiveModelAdapter.extend({
         this.get('flashMessages').success('Updated!', { sticky: true });
       }
     }).catch((error) => {
+      if (error && error.errors.length && error.errors[0].status === '404') {
+        return this.transitionTo('index');
+      }
       this.get('flashMessages').danger(error, { sticky: true });
     });
     return promise;

@@ -6,6 +6,12 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   actions: {
     invalidateSession() {
       this.get('session').invalidate();
+    },
+    error(error)  {
+      debugger;
+      if (error && error.errors.length && error.errors[0].status === '404') {
+        this.transitionTo('404')
+      }
     }
   }
 });
