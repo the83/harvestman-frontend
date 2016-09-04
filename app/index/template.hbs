@@ -30,8 +30,8 @@
 </div>
 
 <div class="container news-feed">
-  <div class="row">
-    <div class="col-xs-12">
+  <div class="row flex-items-xs-center">
+    <div class="m-x-auto col-xs-8">
       {{#each model.posts as |post|}}
         {{hm-post-display post=post}}
       {{/each}}
