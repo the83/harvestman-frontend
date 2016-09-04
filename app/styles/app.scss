@@ -62,16 +62,26 @@ h1, h2, h3 {
   text-transform: lowercase;
 }
 
+.card {
+  float: none;
+  margin: 0px auto;
+}
+
 .product-card {
-  background-color: $gray-lighter;
+  font-size: 0.8em;
+  text-align: center;
+  border: none;
 
   .card-image {
-    text-align: center;
-    background-color: $gray-dark;
     overflow: hidden;
   }
 
   display: inline-block;
+
+  h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 
   img {
     max-height: 250px !important;
