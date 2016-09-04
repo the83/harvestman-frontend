@@ -7,5 +7,6 @@ export default DS.Model.extend({
   images: DS.hasMany('post/image', { async: 'false' }),
   heroImage: Ember.computed('images.[]', function() {
     return this.get('images.firstObject.image.url');
-  })
+  }),
+  date: DS.attr('string')
 });
