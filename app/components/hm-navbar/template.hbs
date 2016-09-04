@@ -20,6 +20,11 @@
               About
             {{/link-to}}
           </li>
+          <li class="nav-item">
+            {{#link-to 'contact' class='nav-link'}}
+              Contact
+            {{/link-to}}
+          </li>
           {{#if showLogoutButton}}
             <li class="nav-item pull-xs-right">
               <button
@@ -67,6 +72,11 @@
             <li>
               {{#link-to "about"}}
                 About
+              {{/link-to}}
+            </li>
+            <li>
+              {{#link-to "contact"}}
+                Contact
               {{/link-to}}
             </li>
             {{#if showLogoutButton}}

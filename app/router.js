@@ -21,6 +21,7 @@ Router.map(function() {
   this.route('404');
   this.route('bad_url', { path: '/*badurl' });
   this.route('about');
+  this.route('contact');
 });
 
 export default Router;

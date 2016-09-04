@@ -27,10 +27,26 @@ $breadcrumb-color: $color-secondary-2-0;
 @import "bootstrap";
 
 body {
+  background-color: $gray-light;
 }
 
 h1, h2, h3 {
   text-transform: uppercase;
+}
+
+.navbar {
+  background-color: white;
+  .navbar-brand {
+    font-weight: bold;
+  }
+}
+
+.container {
+  background-color: white;
+}
+
+.breadcrumb {
+  background-color: black;
 }
 
 .nav {
@@ -62,7 +78,7 @@ h1, h2, h3 {
 }
 
 .news-feed {
-  margin-top: 2em;
+  padding-top: 2em;
 }
 
 .post-card {
@@ -139,8 +155,9 @@ h1, h2, h3 {
   text-align: center;
 }
 
-#about {
+.static-page {
   h3 {
     border-bottom: 1px solid $gray-dark;
+    color: $color-primary-3;
   }
 }
