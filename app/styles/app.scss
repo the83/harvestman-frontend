@@ -172,3 +172,13 @@ h1, h2, h3 {
   background-color: $gray-dark;
   color: $gray-light;
 }
+
+.single-image {
+  background-color: $gray-dark;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none;
+}
