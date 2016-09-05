@@ -1,11 +1,19 @@
 <div class="card product-card m-x-auto">
   {{#link-to "product.show" product.id}}
     <div class="card-image">
-      <img class="card-img-top" src={{product.images.firstObject.image.url}}>
+      {{#if product.images.length}}
+        <img class="card-img-top" src={{product.images.firstObject.image.url}}>
+      {{else}}
+        <img class="card-img-top" src="/default.png">
+      {{/if}}
     </div>
   {{/link-to}}
   <div class="card-block">
-    <h6 class="card-title">{{product.name}}</h6>
+    <h6 class="card-title">
+      {{#link-to "product.show" product.id}}
+        {{product.name}}
+      {{/link-to}}
+    </h6>
     <p class="card-text">{{product.briefDescription}}</p>
   </div>
 </div>
