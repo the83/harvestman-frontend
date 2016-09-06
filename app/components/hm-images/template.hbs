@@ -1,7 +1,7 @@
 <div class="card-deck">
   {{#each images as |image|}}
     <div class="col-sm-2">
-      {{hm-image url=image.image.url}}
+      {{hm-image image=image deleteImage="deleteImage"}}
     </div>
   {{/each}}
 </div>

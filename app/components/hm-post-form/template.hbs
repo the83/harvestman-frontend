@@ -1,5 +1,5 @@
 <form id="post-form">
-  {{hm-images images=post.images}}
+  {{hm-images images=post.images deleteImage="deleteImage"}}
 
   <div class="form-group">
     {{hm-file-uploader store=store model=post objectId=post.id objectType='Post'}}

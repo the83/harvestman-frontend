@@ -1,5 +1,5 @@
 <form id="product-form">
-  {{hm-images images=product.images}}
+  {{hm-images images=product.images deleteImage="deleteImage"}}
 
   <div class="form-group">
     {{hm-file-uploader store=store model=product objectId=product.id objectType='Product'}}

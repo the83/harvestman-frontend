@@ -1,5 +1,6 @@
 <div class="card product-card">
   <div class="card-image">
-    <img class="card-img-top" src={{url}} />
+    <a class="clickable" {{action "deleteImage" image}}>Delete</a>
+    <img class="card-img-top" src={{image.image.url}} />
   </div>
 </div>
