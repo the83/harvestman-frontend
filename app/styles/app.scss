@@ -106,7 +106,9 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid $gray-light;
 
   h3 {
-    color: $color-primary-0;
+    a {
+      color: $color-primary-3;
+    }
     font-weight: bold;
   }
 
