@@ -53,7 +53,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.backendHost = 'https://harvestman-staging.herokuapp.com'
+    ENV.backendHost = 'https://industrialmusicelectronics.herokuapp.com'
   }
 
   return ENV;
