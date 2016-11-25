@@ -5,20 +5,7 @@ moduleForComponent('hm-footer', 'Integration | Component | hm footer', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+test('it displays the copyright', function(assert) {
   this.render(hbs`{{hm-footer}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#hm-footer}}
-      template block text
-    {{/hm-footer}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok((this.$().text().trim()).match(/©/));
 });

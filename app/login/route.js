@@ -14,7 +14,9 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
       let identification = this.modelFor('login').get('identification');
       let password = this.modelFor('login').get('password');
 
-      return this.get('session').authenticate('authenticator:devise', identification, password).catch((reason) => {
+      return this.get('session').authenticate('authenticator:devise', identification, password).catch(() => {
+        this.get('session').invalidate();
+        this.transitionTo('index');
       });
     }
   }

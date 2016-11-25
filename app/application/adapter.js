@@ -1,4 +1,4 @@
-import DS from 'ember-data';
+import Ember from 'ember';
 import ActiveModelAdapter from 'active-model-adapter';
 import config from 'harvestman-frontend/config/environment';
 
@@ -7,20 +7,25 @@ export default ActiveModelAdapter.extend({
   host: config.backendHost,
   namespace: 'api',
   flashMessages: Ember.inject.service(),
+
   ajax(url, type, hash) {
     let promise = this._super(url, type, hash);
+
     promise.then(() => {
       if (type === 'POST') {
-        this.get('flashMessages').success('Created!', { sticky: true });
+        this.get('flashMessages').success('Created!', { sticky: false });
       } else if (type === 'PUT') {
-        this.get('flashMessages').success('Updated!', { sticky: true });
+        this.get('flashMessages').success('Updated!', { sticky: false });
       }
-    }).catch((error) => {
+    });
+
+    promise.catch((error) => {
       if (error && error.errors.length && error.errors[0].status === '404') {
         return this.transitionTo('index');
       }
       this.get('flashMessages').danger(error, { sticky: true });
     });
+
     return promise;
   }
 });
