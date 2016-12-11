@@ -6,7 +6,7 @@ export default ApplicationAdapter.extend({
   deleteRecord(store, type, snapshot) {
     return this.get('ajax').request(
       `/api/v1/images/${snapshot.id}`,
-      { method: 'DELETE' }
+      { method: 'DELETE' },
     );
   }
 });

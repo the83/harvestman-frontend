@@ -3,16 +3,16 @@ import Ember from 'ember';
 import config from 'harvestman-frontend/config/environment';
 
 export default EmberUploader.FileField.extend({
+  session: Ember.inject.service(),
+
   imageModel: Ember.computed('objectType', function() {
     return `${this.get('objectType')}.image`;
   }),
 
-  filesDidChange: function(files) {
-    var CustomUploader = EmberUploader.Uploader.extend({
-      headers: {},
-      _ajax: function(settings) {
-        settings = Ember.merge(settings, this.getProperties('headers'));
-        return this._super(settings);
+  uploadFiles(files, headers) {
+    const CustomUploader = EmberUploader.Uploader.extend({
+      ajaxSettings: {
+        headers
       }
     });
 
@@ -23,12 +23,18 @@ export default EmberUploader.FileField.extend({
       paramName: 'image'
     });
 
-    if (!Ember.isEmpty(files)) {
-      uploader.upload(files[0]).then((response) => {
-        this.get('model.images').pushObject(
-          this.get('store').createRecord(this.get('imageModel'), response.image)
-        );
-      });
-    }
+    uploader.upload(files[0]).then((response) => {
+      this.get('model.images').pushObject(
+        this.get('store').createRecord(this.get('imageModel'), response.image)
+      );
+    });
+  },
+
+  filesDidChange: function(files) {
+    this.get('session').authorize('authorizer:devise', (headerName, headerValue) => {
+      const headers = {};
+      headers[headerName] = headerValue;
+      this.uploadFiles(files, headers);
+    });
   }
 });
