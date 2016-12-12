@@ -1,0 +1,16 @@
+<div class="firmware-form">
+  {{#each firmwares as |firmware|}}
+    <hr />
+    <div class="form-group">
+      <label for="firmware-name-{{firmware.id}}">Display Name</label>
+      {{input type="text" id=(concat "firmware-name-" firmware.id) class="form-control" value=firmware.name}}
+    </div>
+
+    <div class="form-group">
+      <label>File</label>
+      {{firmware.firmware.url}}
+    </div>
+
+    <a class="clickable" {{action "deleteFirmware" firmware}}>Delete</a>
+  {{/each}}
+</div>

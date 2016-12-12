@@ -1,6 +1,2 @@
-import DS from 'ember-data';
-
-export default DS.Model.extend({
-  product: DS.belongsTo('product'),
-  image: DS.attr('raw'),
-});
+import ImageModel from '../../image/model';
+export default ImageModel.extend();

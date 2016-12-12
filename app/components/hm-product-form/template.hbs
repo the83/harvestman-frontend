@@ -1,40 +1,62 @@
 <form id="product-form">
-  {{hm-images images=product.images deleteImage="deleteImage"}}
+  <section id="images">
+    <hr />
+    <h5>Images</h5>
+
+    {{hm-images images=product.images deleteImage="deleteImage"}}
+
+    <div class="form-group">
+      {{hm-file-uploader store=store model=product objectId=product.id objectType='Product' childType="image"}}
+    </div>
+  </section>
+
+  <section id="product-details-form">
+    <hr />
+    <h5>Product Details</h5>
+
+    <div class="form-group">
+      <label for="product-name">Product Name</label>
+      {{input type="text" id="product-name" class="form-control" value=product.name}}
+    </div>
+
+    <div class="form-group">
+      <label for="product-model-number">Model Number</label> {{input type="text" id="product-model-number" class="form-control" value=product.modelNumber}}
+    </div>
+
+    <div class="form-group">
+      <label for="product-brief-description">Brief Description</label>
+      {{input type="text" id="product-brief-description" class="form-control" value=product.briefDescription}}
+    </div>
+
+    <div class="form-group">
+      <label for="product-description">Description</label>
+      {{textarea id="product-description" class="form-control" value=product.description}}
+    </div>
+
+    <div class="form-group">
+      <label for="product-features">Features</label>
+      {{textarea id="product-features" class="form-control" value=product.features}}
+    </div>
+
+    <div class="form-group">
+      <label for="product-manual">Manual</label>
+      {{textarea id="product-manual" class="form-control" value=product.manual}}
+    </div>
+  </section>
+
+  <section id="firmware">
+    <hr />
+    <h5>Firmware</h5>
+
+    <div class="form-group">
+      {{hm-file-uploader store=store model=product objectId=product.id objectType='Product' childType="firmware"}}
+    </div>
+
+    {{hm-firmware-form firmwares=product.firmwares deleteFirmware="deleteFirmware"}}
+  </section>
 
   <div class="form-group">
-    {{hm-file-uploader store=store model=product objectId=product.id objectType='Product'}}
-  </div>
-
-  <div class="form-group">
-    <label for="product-name">Product Name</label>
-    {{input type="text" id="product-name" class="form-control" value=product.name}}
-  </div>
-
-  <div class="form-group">
-    <label for="product-model-number">Model Number</label> {{input type="text" id="product-model-number" class="form-control" value=product.modelNumber}}
-  </div>
-
-  <div class="form-group">
-    <label for="product-brief-description">Brief Description</label>
-    {{input type="text" id="product-brief-description" class="form-control" value=product.briefDescription}}
-  </div>
-
-  <div class="form-group">
-    <label for="product-description">Description</label>
-    {{textarea id="product-description" class="form-control" value=product.description}}
-  </div>
-
-  <div class="form-group">
-    <label for="product-features">Features</label>
-    {{textarea id="product-features" class="form-control" value=product.features}}
-  </div>
-
-  <div class="form-group">
-    <label for="product-manual">Manual</label>
-    {{textarea id="product-manual" class="form-control" value=product.manual}}
-  </div>
-
-  <div class="form-group">
+    <hr />
     <button class="btn btn-primary" type="submit" id="save-button" {{action 'save'}}>
       Submit
     </button>

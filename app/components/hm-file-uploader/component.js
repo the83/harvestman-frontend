@@ -6,26 +6,24 @@ export default EmberUploader.FileField.extend({
   session: Ember.inject.service(),
 
   imageModel: Ember.computed('objectType', function() {
-    return `${this.get('objectType')}.image`;
+    return `${this.get('objectType')}.${this.get('childType')}`;
   }),
 
   uploadFiles(files, headers) {
     const CustomUploader = EmberUploader.Uploader.extend({
-      ajaxSettings: {
-        headers
-      }
+      ajaxSettings: { headers }
     });
 
     const host = config.backendHost;
-    const uploadUrl = `${host}/api/v1/images?parent_id=${this.get('objectId')}&parent_type=${this.get('objectType')}` ;
+    const uploadUrl = `${host}/api/v1/${this.get('childType')}s?parent_id=${this.get('objectId')}&parent_type=${this.get('objectType')}` ;
     const uploader = CustomUploader.create({
       url: uploadUrl,
-      paramName: 'image'
+      paramName: this.get('childType'),
     });
 
     uploader.upload(files[0]).then((response) => {
-      this.get('model.images').pushObject(
-        this.get('store').createRecord(this.get('imageModel'), response.image)
+      this.get(`model.${this.get('childType')}s`).pushObject(
+        this.get('store').createRecord(this.get('imageModel'), response[this.get('childType')])
       );
     });
   },

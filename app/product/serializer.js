@@ -4,12 +4,17 @@ import { ActiveModelSerializer } from 'active-model-adapter';
 export default ActiveModelSerializer.extend(DS.EmbeddedRecordsMixin, {
   isNewSerializerAPI: true,
   attrs: {
-    images: { embedded: 'always' }
+    images: { embedded: 'always' },
+    firmwares: { embedded: 'always' }
   },
   serialize: function(record, options) {
     var json = this._super(record, options);
     json.images_attributes = json.images;
     delete json.images;
+
+    json.firmwares_attributes = json.firmwares;
+    delete json.firmwares;
+
     return json;
   }
 });
