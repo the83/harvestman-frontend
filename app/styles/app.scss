@@ -44,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar {
+  padding: 0.5rem 0rem;
   background-color: white;
   .navbar-brand {
     font-weight: bold;
@@ -76,10 +77,19 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0px auto;
 }
 
+.product-header {
+  h3 {
+    font-weight: bold;
+  }
+
+  margin-bottom: 0.5em;
+}
+
 .product-card {
   font-size: 0.8em;
   text-align: center;
   border: none;
+  max-width: 100%;
 
   .card-image {
     overflow: hidden;
@@ -104,30 +114,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-card {
-  margin-top: 2.5em;
-  padding-bottom: 2.5em;
-  border-bottom: 1px solid $gray-light;
-
-  h3 {
-    a {
-      color: $color-secondary-2-1;
-    }
-    font-weight: bold;
-  }
+  padding: 1em 0em;
+  background-color: white;
 
   .card-image {
-    max-height: 400px;
+    max-height: 300px;
     overflow: hidden;
     position: relative;
     margin-bottom: 2em;
   }
 
   .post-title {
-    text-align: center;
     h3 {
-      color: $gray-dark;
+      a {
+        color: $gray-dark;
+        font-weight: bold;
+      }
     }
-    margin-bottom: 2em;
+    h6 {
+      color: $gray-light;
+    }
+    margin-bottom: 1em;
   }
 
   .date {
@@ -138,9 +145,6 @@ h1, h2, h3, h4, h5, h6 {
   img {
     width: 100%;
     overflow: hidden;
-  }
-
-  .post-content {
   }
 }
 
@@ -163,11 +167,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #homepage-hero {
-  height: 400px;
-  overflow: hidden;
-  img {
-    width: 100%;
+  .jumbotron-fluid {
+    max-height: 400px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
   }
+}
+
+.news-feed {
+  padding-top: 1em;
 }
 
 .not-found {
@@ -177,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 .static-page {
   h5 {
     border-bottom: 1px solid $gray-dark;
-    color: $color-secondary-2-1;
+    color: $gray-dark;
     text-transform: uppercase;
   }
 }

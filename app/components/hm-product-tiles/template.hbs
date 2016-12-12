@@ -1,6 +1,11 @@
 <div class="row">
   {{#each products as |product|}}
-    <div class="col-md-2 m-x-left" >
+    <div class="col-xs-2 hidden-xs-down" >
+      {{hm-product-tile product=product}}
+    </div>
+
+    <div class=
+    <div class="col-xs-2 flex-xs-middle hidden-sm-up" >
       {{hm-product-tile product=product}}
     </div>
   {{/each}}
