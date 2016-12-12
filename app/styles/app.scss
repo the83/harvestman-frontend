@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 
   h3 {
     a {
-      color: $color-primary-3;
+      color: $color-secondary-2-1;
     }
     font-weight: bold;
   }
@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 .static-page {
   h5 {
     border-bottom: 1px solid $gray-dark;
-    color: $color-primary-3;
+    color: $color-secondary-2-1;
     text-transform: uppercase;
   }
 }
@@ -200,4 +200,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .clickable {
   cursor: pointer;
+}
+
+.product-display-container {
+  min-height: 500px;
 }
