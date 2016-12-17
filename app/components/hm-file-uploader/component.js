@@ -5,7 +5,7 @@ import config from 'harvestman-frontend/config/environment';
 export default EmberUploader.FileField.extend({
   session: Ember.inject.service(),
 
-  imageModel: Ember.computed('objectType', function() {
+  fileModel: Ember.computed('objectType', function() {
     return `${this.get('objectType')}.${this.get('childType')}`;
   }),
 
@@ -23,7 +23,7 @@ export default EmberUploader.FileField.extend({
 
     uploader.upload(files[0]).then((response) => {
       this.get(`model.${this.get('childType')}s`).pushObject(
-        this.get('store').createRecord(this.get('imageModel'), response[this.get('childType')])
+        this.get('store').createRecord(this.get('fileModel'), response[this.get('childType')])
       );
     });
   },

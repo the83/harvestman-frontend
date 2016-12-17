@@ -11,6 +11,11 @@ export default BaseRoute.extend(AuthenticatedRouteMixin, {
     deleteFirmware(firmware) {
       firmware.deleteRecord();
       firmware.save();
-    }
+    },
+
+    deleteManual(manual) {
+      manual.deleteRecord();
+      manual.save();
+    },
   }
 });

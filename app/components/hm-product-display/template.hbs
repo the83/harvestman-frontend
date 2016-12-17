@@ -64,18 +64,32 @@
           {{{product.features}}}
         </p>
       </div>
+
       <div class="tab-pane fade" id="manual" role="tabpanel">
-        <p>
-          No manual available for this product.
-        </p>
+        {{#if product.manuals.length}}
+          <ul>
+            {{#each product.manuals as |manual|}}
+              <li>
+                <a href={{manual.manual.url}}>
+                  {{file-name manual 'manual'}}
+                </a>
+              </li>
+            {{/each}}
+          </ul>
+        {{else}}
+          <p>
+            No manuals available for this product.
+          </p>
+        {{/if}}
       </div>
+
       <div class="tab-pane fade" id="firmware" role="tabpanel">
         {{#if product.firmwares.length}}
           <ul>
             {{#each product.firmwares as |firmware|}}
               <li>
                 <a href={{firmware.firmware.url}}>
-                  {{firmware-name firmware }}
+                  {{file-name firmware 'firmware'}}
                 </a>
               </li>
             {{/each}}

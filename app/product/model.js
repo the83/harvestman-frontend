@@ -9,5 +9,6 @@ export default DS.Model.extend({
   manual: attr('string'),
   images: DS.hasMany('product/image', { async: 'false' }),
   features: attr('string'),
-  firmwares: DS.hasMany('product/firmwares', { async: 'false' }),
+  firmwares: DS.hasMany('product/firmware', { async: 'false' }),
+  manuals: DS.hasMany('product/manual', { async: 'false' }),
 });

@@ -12,6 +12,10 @@ export default Ember.Component.extend({
 
     deleteFirmware(firmware) {
       this.sendAction('deleteFirmware', firmware);
+    },
+
+    deleteManual(manual) {
+      this.sendAction('deleteManual', manual);
     }
   }
 });

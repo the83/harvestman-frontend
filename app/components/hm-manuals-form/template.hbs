@@ -1,0 +1,16 @@
+<div class="manuals-form">
+  {{#each manuals as |manual|}}
+    <hr />
+    <div class="form-group">
+      <label for="manual-name-{{manual.id}}">Display Name</label>
+      {{input type="text" id=(concat "manual-name-" manual.id) class="form-control" value=manual.name}}
+    </div>
+
+    <div class="form-group">
+      <label>File</label>
+      {{manual.manual.url}}
+    </div>
+
+    <a class="clickable" {{action "deleteManual" manual}}>Delete</a>
+  {{/each}}
+</div>
