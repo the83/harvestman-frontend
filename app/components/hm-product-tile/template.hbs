@@ -2,9 +2,9 @@
   {{#link-to "product.show" product.id}}
     <div class="card-image">
       {{#if product.images.length}}
-        <img class="card-img-top" src={{product.images.firstObject.image.url}}>
+        <img src={{product.images.firstObject.image.url}}>
       {{else}}
-        <img class="card-img-top" src="/default.png">
+        <img src="/default.png">
       {{/if}}
     </div>
   {{/link-to}}

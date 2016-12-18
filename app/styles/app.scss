@@ -86,6 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-card {
+  cursor: pointer;
   font-size: 0.8em;
   text-align: center;
   border: none;
@@ -114,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-card {
-  padding: 1em 0em;
+  padding: 1em 1em 1em 0em;
   background-color: white;
 
   .card-image {
@@ -176,8 +177,31 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.news-feed {
+.featured-products {
+  background-color: $gray-lightest;
   padding-top: 1em;
+  border-left: 1px solid $gray;
+
+  h3, a {
+    color: $gray-dark;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.news-feed {
+  margin-top: 0.2em;
+
+  .product-card {
+    background-color: $gray-lightest;
+    padding: 1em 0em;
+    display: block;
+
+    img {
+      max-height: 250px !important;
+      max-width: 80%;
+    }
+  }
 }
 
 .not-found {
