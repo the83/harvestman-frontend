@@ -4,6 +4,10 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 export default Ember.Route.extend(ApplicationRouteMixin, {
   session: Ember.inject.service('session'),
   actions: {
+    didTransition() {
+      window.scroll(0, 0);
+      return true; // Bubble the didTransition event
+    },
     invalidateSession() {
       this.get('session').invalidate();
     },
