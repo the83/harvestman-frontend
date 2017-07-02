@@ -22,6 +22,7 @@ Router.map(function() {
   this.route('bad_url', { path: '/*badurl' });
   this.route('about');
   this.route('contact');
+  this.route('dealers');
 });
 
 export default Router;
