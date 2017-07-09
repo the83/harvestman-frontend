@@ -1,33 +1,9 @@
-$font-family-base: "Inconsolata";
-
-$color-primary-0: #E66800;	// Main Primary color */
-$color-primary-1: #FF7400;
-$color-primary-2: #FF7400;
-$color-primary-3: #B95400;
-$color-primary-4: #893E00;
-
-$color-secondary-1-0: #E69A00;	// Main Secondary color (1) */
-$color-secondary-1-1: #FFAA00;
-$color-secondary-1-2: #FFAA00;
-$color-secondary-1-3: #B97B00;
-$color-secondary-1-4: #895B00;
-
-$color-secondary-2-0: #E60000;	// Main Secondary color (2) */
-$color-secondary-2-1: #FF0000;
-$color-secondary-2-2: #FF0000;
-$color-secondary-2-3: #B90000;
-$color-secondary-2-4: #890000;
-
-$light-background-color: #f7f7f7;
-
-$link-color: $color-primary-1;
-$breadcrumb-color: $color-secondary-2-0;
-
 @import "variables";
 @import "bootstrap";
 
 body {
-  background-color: $gray-dark;
+  background-color: $outer-color;
+  color: $gray-lighter;
 }
 
 .navbar, .breadcrumb, .site-footer {
@@ -40,27 +16,47 @@ h1, h2, h3 {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica";
+  color: $color-secondary-1-2;
+}
+
+.top-nav {
+  background-color: $navbar-color !important;
+}
+
+.flash-container {
+  padding-bottom: 0px !important;
 }
 
 .navbar {
   padding: 0.5rem 0rem;
-  background-color: white;
   .navbar-brand {
     font-weight: bold;
+    color: $link-color;
   }
 }
 
 .container {
-  background-color: white;
+  background-color: $light-background-color;
   padding-bottom: 5px;
 }
 
 .breadcrumb {
   background-color: $gray-dark;
+  border-radius: 0px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .nav {
   text-transform: uppercase;
+}
+
+.nav-link {
+  color: $gray !important;
+}
+
+.nav-link:hover {
+  color: $gray-dark !important;
 }
 
 .navbar-brand {
@@ -91,6 +87,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   margin-bottom: 2em;
   padding: 0.5em;
+  background-color: $light-background-color;
 
   .card-image {
     overflow: hidden;
@@ -128,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-card {
   padding: 1em 1em 1em 0em;
-  background-color: white;
+  background-color: $light-background-color;
 
   .card-image {
     max-height: 300px;
@@ -140,12 +137,12 @@ h1, h2, h3, h4, h5, h6 {
   .post-title {
     h3 {
       a {
-        color: $gray-dark;
+        color: $color-secondary-1-2;
         font-weight: bold;
       }
     }
     h6 {
-      color: $gray-light;
+      color: $color-secondary-1-3;
     }
     margin-bottom: 1em;
   }
@@ -190,12 +187,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .featured-products {
-  background-color: $gray-lightest;
+  background-color: $light-background-color;
   padding-top: 1em;
   border-left: 1px solid $gray;
 
   h3 {
-    color: $gray-dark;
     text-align: center;
     font-weight: bold;
   }
@@ -205,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.2em;
 
   .product-card {
-    background-color: $gray-lightest;
+    background-color: $light-background-color;
     padding: 1em 0em;
     display: block;
 
@@ -222,14 +218,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .static-page {
   h5 {
-    border-bottom: 1px solid $gray-dark;
-    color: $gray-dark;
+    border-bottom: 1px solid $gray;
+    padding-bottom: 2px;
     text-transform: uppercase;
   }
 }
 
 .site-footer {
-  padding: 1em;
+  padding: 1.2em;
   background-color: $gray-dark;
   color: $gray-light;
 }
@@ -254,4 +250,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-section {
   margin-bottom: 2em;
+}
+
+.loading-container {
+  min-height: 200px;
 }

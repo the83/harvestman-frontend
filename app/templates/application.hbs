@@ -1,5 +1,6 @@
 {{hm-navbar invalidateSession='invalidateSession'}}
-<div class="container">
+
+<div class="container flash-container">
   {{#each flashMessages.queue as |flash|}}
     {{flash-message flash=flash}}
   {{/each}}

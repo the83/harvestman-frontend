@@ -1,121 +1,113 @@
-<div class="container">
+<div class="container top-nav">
   <nav class="navbar navbar-static-top navbar-light">
-    <div class="row">
-      <div class="col-xs-12">
-        <a class="navbar-brand" href="/">Industrial Music Electronics</a>
+    <a class="navbar-brand" href="/">Industrial Music Electronics</a>
 
-        <ul class="nav navbar-nav hidden-sm-down">
-          <li class="nav-item">
-            {{#link-to 'product' class='nav-link'}}
-              Products
-            {{/link-to}}
-          </li>
-          <li class="nav-item">
-            {{#link-to 'post' class='nav-link'}}
-              News
-            {{/link-to}}
-          </li>
-          <li class="nav-item">
-            {{#link-to 'dealers' class='nav-link'}}
-              Dealers
-            {{/link-to}}
-          </li>
-          <li class="nav-item">
-            {{#link-to 'about' class='nav-link'}}
-              About
-            {{/link-to}}
-          </li>
-          <li class="nav-item">
-            {{#link-to 'contact' class='nav-link'}}
-              Contact
-            {{/link-to}}
-          </li>
-          <li class="nav-item">
-            <a href="http://store.industrialmusicelectronics.com/" class="nav-link">
-              Store
-            </a>
-          </li>
-          {{#if showLogoutButton}}
-            <li class="nav-item pull-xs-right">
-              <button
-                type="button"
-                class="btn btn-warning"
-                {{action 'invalidateSession'}}
-                >
-                Log Out
-              </button>
-            </li>
-          {{/if}}
-        </ul>
-
-        <div>
+    <ul class="nav navbar-nav hidden-sm-down">
+      <li class="nav-item">
+        {{#link-to 'product' class='nav-link'}}
+          Products
+        {{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'post' class='nav-link'}}
+          News
+        {{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'dealers' class='nav-link'}}
+          Dealers
+        {{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'about' class='nav-link'}}
+          About
+        {{/link-to}}
+      </li>
+      <li class="nav-item">
+        {{#link-to 'contact' class='nav-link'}}
+          Contact
+        {{/link-to}}
+      </li>
+      <li class="nav-item">
+        <a href="http://store.industrialmusicelectronics.com/" class="nav-link">
+          Store
+        </a>
+      </li>
+      {{#if showLogoutButton}}
+        <li class="nav-item pull-xs-right">
           <button
             type="button"
-            class="navbar-toggler collapsed hidden-md-up pull-xs-right"
-            data-toggle="collapse"
-            data-target="#collapsing-navbar"
-            aria-expanded="false"
-            aria-controls="navbar"
+            class="btn btn-warning"
+            {{action 'invalidateSession'}}
             >
-            &#9776;
-            <span class="sr-only">Toggle navigation</span>
+            Log Out
           </button>
-        </div>
-      </div>
+        </li>
+      {{/if}}
+    </ul>
+
+    <div>
+      <button
+        type="button"
+        class="navbar-toggler collapsed hidden-md-up pull-xs-right"
+        data-toggle="collapse"
+        data-target="#collapsing-navbar"
+        aria-expanded="false"
+        aria-controls="navbar"
+        >
+        &#9776;
+        <span class="sr-only">Toggle navigation</span>
+      </button>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <div id="collapsing-navbar" class="collapse">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="/">Home</a>
-            </li>
-            <li>
-              {{#link-to "product"}}
-                Products
-              {{/link-to}}
-            </li>
-            <li>
-              {{#link-to "post"}}
-                News
-              {{/link-to}}
-            </li>
-            <li>
-              {{#link-to "dealers"}}
-                Dealers
-              {{/link-to}}
-            </li>
-            <li>
-              {{#link-to "about"}}
-                About
-              {{/link-to}}
-            </li>
-            <li>
-              {{#link-to "contact"}}
-                Contact
-              {{/link-to}}
-            </li>
-            <li>
-              <a href="http://store.industrialmusicelectronics.com/">
-                Store
-              </a>
-            </li>
+    <div id="collapsing-navbar" class="collapse">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="/">Home</a>
+        </li>
+        <li>
+          {{#link-to "product"}}
+            Products
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "post"}}
+            News
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "dealers"}}
+            Dealers
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "about"}}
+            About
+          {{/link-to}}
+        </li>
+        <li>
+          {{#link-to "contact"}}
+            Contact
+          {{/link-to}}
+        </li>
+        <li>
+          <a href="http://store.industrialmusicelectronics.com/">
+            Store
+          </a>
+        </li>
 
-            {{#if showLogoutButton}}
-              <li>
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  {{action 'invalidateSession'}}
-                  >
-                  Log Out
-                </button>
-              </li>
-            {{/if}}
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+        {{#if showLogoutButton}}
+          <li>
+            <button
+              type="button"
+              class="btn btn-warning"
+              {{action 'invalidateSession'}}
+              >
+              Log Out
+            </button>
+          </li>
+        {{/if}}
+      </ul>
+    </div><!--/.nav-collapse -->
   </nav>
 </div>
