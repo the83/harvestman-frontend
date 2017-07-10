@@ -120,7 +120,10 @@ h1, h2, h3, h4, h5, h6 {
 .product-images {
   img {
     max-width: 100%;
+    max-height: 500px;
   }
+
+  margin-bottom: 2em;
 }
 
 .post-card {
@@ -231,13 +234,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .single-image {
-  background-color: $gray-dark;
+  background-color: $light-background-color;
   width: 100%;
   text-align: center;
 }
 
 .carousel-control.left, .carousel-control.right {
   background-image: none;
+}
+
+.carousel-inner {
+  background-color: $light-background-color;
 }
 
 .clickable {
