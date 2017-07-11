@@ -179,13 +179,15 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1em;
 }
 
+.homepage-hero-container {
+  padding: 0px;
+}
+
 #homepage-hero {
-  .jumbotron-fluid {
-    max-height: 400px;
-    overflow: hidden;
-    img {
-      width: 100%;
-    }
+  max-height: 350px;
+  overflow: hidden;
+  img {
+    width: 100%;
   }
 }
 
