@@ -1,0 +1,23 @@
+// command to include index in deploy is:
+// ember deploy production --activate=true
+module.exports = function(deployTarget) {
+  var ENV = {};
+
+  ENV['s3'] = {
+    accessKeyId: 'some-access-key-id',
+    secretAccessKey: 'some-access-key',
+    bucket: 'some-bucket',
+    region: 'us-west-2',
+    allowOverwrite: true,
+  };
+
+  ENV['s3-index'] = {
+    accessKeyId: 'some-access-key-id',
+    secretAccessKey: 'some-access-key',
+    bucket: 'some-bucket',
+    region: 'us-west-2',
+    allowOverwrite: true,
+  };
+
+  return ENV;
+}
